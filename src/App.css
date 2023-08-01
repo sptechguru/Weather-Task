@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  .heading{
+    color:blue;
+    font-weight: 700;
+    text-align: center;
+  }
+  .wetherResultBox{
+    margin: auto;
+    width: 700px;
+    height:90vh;
+  }
+  .weathorIcon{
+    margin-top: 2rem;
+    width: 100px;
+    height: 100px;
+  }
+  .weathorCity{
+    font-size: 35px;
+  }
+  .weathorTemp{
+    font-size:18px;
+    font-weight: 700;
+  }
+  .weatherText{
+    font-size:40px;
+    font-weight: bold;
+    color: aqua;
+    /* text-transform:uppercase; */
+  }
+  .error_messge{
+    font-size:40px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    text-transform: capitalize;
+  }
