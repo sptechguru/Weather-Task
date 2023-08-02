@@ -21,7 +21,7 @@ const Weather = () => {
         try {
             setLoading(true);
             const response = await axios.get(`${ENDPOINTS.ApiBaseUrl}${city}&units=metric&appid=${ENDPOINTS.WeatherKey}`);
-            console.log('weather appp....', response.data);
+            // console.log('weather appp....', response.data);
             newWetherData(response.data);
             setLoading(false);
         } catch (error) {
@@ -65,52 +65,52 @@ const Weather = () => {
 
                         {
                             Object.keys(weatherData).length > 0 &&
-                        <div className="col-md-7 col-lg-7 col-12 text-center card  mx-5">
-                            <div class="card-body head city_Section">
-                                <div class="card-body center right text-center">
-                                {
-                                        weatherData.weather.map((item, index) => {
-                                            return (
-                                                <div className="py-3" key={index}>
-                                                    <h6 className="weathorCity">{item.main}</h6>
-                                                 {/* <h3 className="weathorCity font-weight-bold"> Description :{item.description}</h3>  */}
-                                                </div>
-                                            );
-                                        })
-                                    }
-                                    <img alt="" className="img-fluid img-responsive" src="http://openweathermap.org/img/w/04d.png" />
-                                    <h1 class="card-text">{((weatherData?.main?.pressure) - 273.15).toFixed(2)} ℉</h1>
+                            <div className="col-md-7 col-lg-7 col-12 text-center card  mx-5">
+                                <div className="card-body head city_Section">
+                                    <div className="card-body center right text-center">
+                                        {
+                                            weatherData.weather.map((item, index) => {
+                                                return (
+                                                    <div className="py-3" key={index}>
+                                                        <h6 className="weathorCity">{item.main}</h6>
+                                                        {/* <h3 className="weathorCity font-weight-bold"> Description :{item.description}</h3>  */}
+                                                    </div>
+                                                );
+                                            })
+                                        }
+                                        <img alt="" className="img-fluid img-responsive" src="http://openweathermap.org/img/w/04d.png" />
+                                        <h1 className="card-text">{((weatherData?.main?.temp))} ℉</h1>
+                                    </div>
                                 </div>
+
+                                <div className="card-body">
+                                    <h5 className="card-title">Weather Details for city : {weatherData?.name}</h5>
+                                    <table className="table py-2">
+                                        <tbody>
+                                            <tr>
+                                                <td>Temperature </td>
+                                                <td>:{((weatherData?.main?.temp) - 273.15).toFixed(2)} ℉</td>
+
+                                                <td>Temperature Min </td>
+                                                <td>:{((weatherData?.main?.temp_min) - 273.15).toFixed(2)} ℉</td>
+                                            </tr>
+                                            <tr>
+                                                <td >Feels like </td>
+                                                <td>:{((weatherData?.main?.feels_like) - 273.15).toFixed(2)}°F </td>
+                                                <td >Pressure </td>
+                                                <td>:{((weatherData?.main?.pressure))}°C</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Himudity </td>
+                                                <td>: {((weatherData?.main?.humidity) - 273.15).toFixed(2)}</td>
+                                                <td>Wind </td>
+                                                <td>: {((weatherData?.wind?.speed))} Mph</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Weather Details for city : {weatherData?.name}</h5>
-                                <table class="table py-2">
-                                    <tbody>
-                                        <tr>
-                                            <td>Temperature </td>
-                                            <td>:{((weatherData?.main?.temp) - 273.15).toFixed(2)} ℉</td>
-
-                                            <td>Temperature Min </td>
-                                            <td>:{((weatherData?.main?.temp_min) - 273.15).toFixed(2)} ℉</td>
-                                        </tr>
-                                        <tr>
-                                            <td >Feels like </td>
-                                            <td>:{((weatherData?.main?.feels_like) - 273.15).toFixed(2)}°F </td>
-                                            <td >Pressure </td>
-                                            <td>:{((weatherData?.main?.pressure))}°C</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Himudity </td>
-                                            <td>: {((weatherData?.main?.humidity) - 273.15).toFixed(2)}</td>
-                                            <td>Wind </td>
-                                            <td>: {((weatherData?.wind?.speed))} Mph</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
 
                         }
 
