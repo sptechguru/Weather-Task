@@ -3,16 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+html, body{
+  background-image: url('https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?cs=srgb&dl=pexels-pixabay-209831.jpg&fm=jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff !important;
+  max-height: 100vh !important;
+}
+
+.search_left{
+  opacity: .8;
+  background: #4d00ff12;
+  color: #fff;
+}
+.city_Section{
+  background-image: url('https://weather-355fb.web.app/assets/images/Clouds.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.head {
+  height: 300px !important;
+  color: #f0f8ff;
+  opacity: .8 !important;
+}
+
   .heading{
     color:blue;
     font-weight: 700;
     text-align: center;
   }
-  .wetherResultBox{
+  .wetherResultBox2{
     margin: auto;
     width: 700px;
     height:90vh;
   }
+
   .weathorIcon{
     margin-top: 2rem;
     width: 100px;
@@ -31,10 +59,4 @@
     color: aqua;
     /* text-transform:uppercase; */
   }
-  .error_messge{
-    font-size:40px;
-    font-weight: bold;
-    color: red;
-    text-align: center;
-    text-transform: capitalize;
-  }
+  
